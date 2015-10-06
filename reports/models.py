@@ -2,6 +2,7 @@ from django.db import models
 
 
 class CountryReport(models.Model):
+    # This is a comment
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
