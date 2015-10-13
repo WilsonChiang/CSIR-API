@@ -6,12 +6,19 @@ class CountryReport(models.Model):
     subtitle = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    def __unicode__(self):
+        return '%s: %s' % (self.title, self.subtitle)
 
 
-class Maps(models.Model):
+class Map(models.Model):
     country = models.CharField(max_length=255)  # TODO: Add choices enum for countries
+    title = models.CharField(max_length=255)
     map_url = models.CharField(max_length=255)
     report = models.ForeignKey(CountryReport)
+    
+    def __unicode__(self):
+        return '%s' % (self.title)
 
 
 class Section(models.Model):
@@ -20,3 +27,6 @@ class Section(models.Model):
     order = models.PositiveIntegerField()
     section = models.ForeignKey('self', related_name='section_section', blank=True, null=True)
     content = models.TextField(blank=True, null=True)
+    
+    def __unicode__(self):
+        return '%s' % (self.title)
