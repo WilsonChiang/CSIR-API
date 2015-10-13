@@ -5,7 +5,7 @@ from reports.models import Section
 
 class CountryReportAdmin(admin.ModelAdmin):
     model = CountryReport
-    
+
 class MapsAdmin(admin.ModelAdmin):
     model = Maps
 
