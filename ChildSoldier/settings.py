@@ -118,5 +118,7 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-REDACTOR_OPTIONS = {'lang': 'en'}
+
+# more options may be added with widgets, maybe tables, lists, fonts
+REDACTOR_OPTIONS = {'lang': 'en', 'buttonsHide': ['file']}
 REDACTOR_UPLOAD = '/static/uploads'
