@@ -1,5 +1,6 @@
 <?php
   require("template/header.php");
+
  ?>
 
 
@@ -12,7 +13,19 @@
            <h3 class="panel-title">Remeo Dallaire Child Soldier Initiative - Country Reports</h3>
          </div>
          <div class="panel-body">
+           <?php
+              $json = file_get_contents('http://127.0.0.1:8000/countryreports/');
+              $obj = json_decode($json, true);
+              foreach ($obj as $value){
+                print_r($value);
+                echo '</br>';
+                // $json1 = file_get_contents('http://127.0.0.1:8000/countryreports/'.$value[id]);
+                // $obj1 = json_decode($json, true);
+                echo 'http://127.0.0.1:8000/countryreports/'.$value[id];
 
+                echo '</br>';
+              }
+            ?>
          </div>
          <div class="panel-footer">
 
