@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 
 class Country(models.Model):
